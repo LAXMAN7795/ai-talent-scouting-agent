@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import API_BASE from "../config";
+
+
 
 function ResultsPage() {
   const { id } = useParams();
@@ -19,7 +22,7 @@ function ResultsPage() {
 
     console.log("Fetching results for JD:", jd_id);
 
-    fetch(`http://127.0.0.1:8000/rank/${jd_id}`)
+    fetch(`${API_BASE}/rank/${jd_id}`)
       .then(res => res.json())
       .then(data => {
         if (!isMounted) return;

@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import API_BASE from "../config";
+
+
 
 function JDDetails() {
   const { id } = useParams();
@@ -10,7 +13,7 @@ function JDDetails() {
   useEffect(() => {
     console.log("Fetching JD:", id);
 
-    fetch(`http://127.0.0.1:8000/jd/${id}`)
+    fetch(`${API_BASE}/jd/${id}`)
       .then(res => res.json())
       .then(data => {
         console.log("JD DATA:", data);

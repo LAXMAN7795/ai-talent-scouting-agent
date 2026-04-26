@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import API_BASE from "../config";
+
+
 
 function ApplyPage() {
   const navigate = useNavigate();
@@ -83,7 +86,7 @@ function ApplyPage() {
       // 📄 Resume file
       formData.append("resume", form.resume_file);
 
-      const res = await fetch("http://127.0.0.1:8000/apply", {
+      const res = await fetch(`${API_BASE}/apply`, {
         method: "POST",
         body: formData
       });

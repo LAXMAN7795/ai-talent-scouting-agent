@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config";
+
 
 function JDPage() {
   const [description, setDescription] = useState("");
@@ -16,7 +18,7 @@ function JDPage() {
     try {
       setLoading(true);
 
-      const res = await fetch("http://127.0.0.1:8000/create-jd", {
+      const res = await fetch(`${API_BASE}/create-jd`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"

@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config";
+
+
 
 function RecruiterDashboard() {
   const [jobs, setJobs] = useState([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/jd/all")
+    fetch(`${API_BASE}/jd/all`)
       .then(res => res.json())
       .then(data => setJobs(data))
       .catch(err => console.error(err));
