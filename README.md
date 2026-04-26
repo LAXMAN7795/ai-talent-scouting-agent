@@ -55,16 +55,7 @@ Deployment
 - Database: MongoDB Atlas  
 
 🏗️ System Architecture  
-
-User (Recruiter / Candidate)  
-        ↓  
-Frontend (React - Cloudflare Pages)  
-        ↓  
-Backend API (FastAPI - Render)  
-        ↓  
-Database (MongoDB Atlas)  
-        ↓  
-AI Services (Parsing + Scoring + Matching)  
+![AI Talent Scouting Architecture](architecture_ai_talent_scout.png)
 
 📌 Data Flow  
 - Recruiter creates JD → stored in DB  
